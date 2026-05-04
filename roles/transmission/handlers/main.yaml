@@ -1,0 +1,15 @@
+# roles/transmission/handlers/main.yml
+---
+- name: Stop Transmission       # ← новый handler
+  service:
+    name: transmission-daemon
+    state: stopped
+
+- name: Reload systemd daemon
+  systemd:
+    daemon_reload: yes
+
+- name: Restart Transmission
+  service:
+    name: transmission-daemon
+    state: restarted

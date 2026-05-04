@@ -1,0 +1,3 @@
+# group_vars/all.yaml
+ansible_connection: ssh
+ansible_python_interpreter: /usr/bin/python3 # прописан явно — убирает warning о том, что Ansible сам угадывает интерпретатор Python на целевом хосте

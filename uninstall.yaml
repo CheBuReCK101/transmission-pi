@@ -1,0 +1,33 @@
+# uninstall.yaml
+---
+- name: Remove Transmission from Raspberry Pi
+  hosts: pi
+  tasks:
+    - name: Stop and disable Transmission
+      service:
+        name: transmission-daemon
+        state: stopped
+        enabled: no
+      ignore_errors: yes
+
+    - name: Remove Transmission package
+      apt:
+        name: transmission-daemon
+        state: absent
+        purge: yes
+
+    - name: Remove leftover config directory
+      file:
+        path: /etc/transmission-daemon
+        state: absent
+
+    - name: Remove chebureck from debian-transmission group
+      user:
+        name: chebureck
+        groups: debian-transmission
+        state: absent   # убрать именно из этой группы
+      ignore_errors: yes
+
+    - name: Autoremove unused packages
+      apt:
+        autoremove: yes

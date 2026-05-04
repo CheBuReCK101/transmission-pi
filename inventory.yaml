@@ -1,0 +1,7 @@
+# inventory.yaml
+all:
+  children:
+    pi:
+      hosts:
+        pi5.local:    # или IP твоей малинки
+          ansible_user: chebureck

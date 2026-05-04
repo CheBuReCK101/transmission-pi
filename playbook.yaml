@@ -1,0 +1,6 @@
+# playbook.yaml
+---
+- name: Setup Raspberry Pi
+  hosts: pi
+  roles:
+    - transmission

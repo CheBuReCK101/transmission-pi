@@ -1,0 +1,18 @@
+{# roles/transmission/templates/settings.json.j2 #}
+{
+    "download-dir": "{{ transmission_download_dir }}",
+    "incomplete-dir": "{{ transmission_download_dir }}/.incomplete",
+    "incomplete-dir-enabled": {{ transmission_incomplete_dir_enabled | lower }},
+    "rename-partial-files": {{ transmission_rename_partial_files | lower }},
+    "rpc-enabled": true,
+    "rpc-port": {{ transmission_rpc_port }},
+    "rpc-authentication-required": {{ transmission_rpc_auth_required | lower }},
+    "rpc-host-whitelist": "{{ transmission_rpc_host_whitelist }}",
+    "rpc-host-whitelist-enabled": {{ transmission_rpc_host_whitelist_enabled | lower }},
+    "rpc-whitelist-enabled": {{ transmission_rpc_whitelist_enabled | lower }},
+    "peer-port": {{ transmission_peer_port }},
+    "port-forwarding-enabled": {{ transmission_port_forwarding_enabled | lower }},
+    "umask": 2,
+    "ratio-limit": 1.0,
+    "ratio-limit-enabled": true
+}

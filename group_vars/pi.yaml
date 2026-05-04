@@ -1,0 +1,25 @@
+# group_vars/pi.yaml
+
+# Куда качать торренты
+transmission_download_dir: /media/chebureck/BIG_VOLUME/Torrents
+
+# Настройки RPC (веб-интерфейс)
+transmission_rpc_port: 9091
+# transmission_rpc_username: admin
+# transmission_rpc_password: "changeme"  
+transmission_rpc_auth_required: false
+
+# Настройки соединения
+transmission_peer_port: 51413
+transmission_port_forwarding_enabled: false
+
+# Whitelist — отключаем только внешний, чтобы был доступ и по IP и по hostname
+transmission_rpc_host_whitelist_enabled: true
+transmission_rpc_host_whitelist: "pi5.local,localhost" # чтобы открывалось в браузере
+transmission_rpc_whitelist_enabled: false
+
+# Поведение при загрузке
+transmission_incomplete_dir_enabled: false
+transmission_rename_partial_files: false
+
+transmission_service_user: chebureck
