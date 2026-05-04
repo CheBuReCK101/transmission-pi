@@ -10,6 +10,7 @@ Ansible project for automated deployment and configuration of a Transmission tor
 - **External NTFS drive** — mounted storage for downloads
 
 ## Project Structure
+```bash
 .
 ├── ansible.cfg
 ├── inventory.yaml          # host definitions
@@ -26,7 +27,7 @@ Ansible project for automated deployment and configuration of a Transmission tor
 ├── tasks/          # installation + config tasks
 └── templates/
 └── settings.json.j2  # Transmission config template
-
+```
 ## Features
 
 - Idempotent role-based deployment
